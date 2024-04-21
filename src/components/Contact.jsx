@@ -3,8 +3,8 @@ function Contact() {
     <section className="contact" id="contact">
       <h3>Contact</h3>
       <h4 className="contact-text">
-        Une question ? N'hesitez pas à m'écrire ! Je vous repondrais en moins de
-        24h. À très bientôt !
+        Besoin de me contacter ? Vous pouvez me joindre en remplissant ce
+        formulaire ou par email en cliquant sur l'icône ci-dessous.
       </h4>
 
       <div className="form-container">
@@ -53,7 +53,11 @@ function Contact() {
           </a>
         </div>
         <div>
-          <a href="https://www.google.com/maps/place/Cath%C3%A9drale+Notre-Dame+de+Strasbourg/@48.5817252,7.7480253,17z/data=!3m1!4b1!4m6!3m5!1s0x4796c85253398843:0xe7152777f55e2738!8m2!3d48.5817217!4d7.7505949!16zL20vMDRqNjc2?entry=ttu" target="_blank" rel="noopener noreferrer" >
+          <a
+            href="https://www.google.com/maps/place/Cath%C3%A9drale+Notre-Dame+de+Strasbourg/@48.5817252,7.7480253,17z/data=!3m1!4b1!4m6!3m5!1s0x4796c85253398843:0xe7152777f55e2738!8m2!3d48.5817217!4d7.7505949!16zL20vMDRqNjc2?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fa-solid fa-location-dot"></i>67000 Strasbourg
           </a>
         </div>

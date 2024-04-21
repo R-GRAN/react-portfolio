@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Project from "./Project";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    async function fetchProjects() {
       try {
         const res = await fetch("http://localhost:4000/api/projects");
         if (!res.ok) {
@@ -16,7 +16,7 @@ function Portfolio() {
       } catch (error) {
         console.error("Erreur fetch:", error);
       }
-    };
+    }
     fetchProjects();
   }, []);
 
@@ -24,7 +24,7 @@ function Portfolio() {
     <section className="portfolio" id="portfolio">
       <h3>Portfolio</h3>
       {projects.map((project, index) => (
-        <Project key={project.title} project={project}  index={index}/>
+        <Project key={project.title} project={project} index={index} />
       ))}
     </section>
   );
