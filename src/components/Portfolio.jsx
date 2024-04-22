@@ -13,8 +13,7 @@ function Portfolio() {
     async function fetchProjects() {
       try {
         const res = await fetch(
-          "https://portfolio-backend-seven-henna.vercel.app/",
-          { mode: "no-cors" }
+          "https://portfolio-backend-seven-henna.vercel.app/api/projects"
         );
         if (!res.ok) {
           throw new Error("Erreur lors de la récupération des données");
