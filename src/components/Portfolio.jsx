@@ -1,17 +1,20 @@
-/* import { useState, useEffect } from "react";
-import Project from "./Project"; */
+import { useState, useEffect } from "react";
+import Project from "./Project";
 
-import booki from "@/assets/images/booki.webp";
+/* import booki from "@/assets/images/booki.webp";
 import kasa from "@/assets/images/kasa.webp";
 import grimoire from "@/assets/images/mon-vieux-grimoire.webp";
+import portfolio from "@/assets/images/mon-vieux-grimoire.webp"; */
 
 function Portfolio() {
-  /*   const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const res = await fetch("http://localhost:4000/api/projects");
+        const res = await fetch(
+          "https://portfolio-backend-seven-henna.vercel.app/"
+        );
         if (!res.ok) {
           throw new Error("Erreur lors de la récupération des données");
         }
@@ -31,8 +34,8 @@ function Portfolio() {
         <Project key={project.title} project={project} index={index} />
       ))}
     </section>
-  ); */
-  return (
+  );
+  /*   return (
     <section className="portfolio" id="portfolio">
       <h3>Portfolio</h3>
       <article className="project">
@@ -109,8 +112,32 @@ function Portfolio() {
           </a>
         </div>
       </article>
+      <article className="project">
+        <div className="project-img-container">
+          <img className="project-img" src={portfolio} alt="visuel du projet" />
+        </div>
+
+        <div className="project-block">
+          <h4>Mon vieux grimoire</h4>
+          <p>Back-end</p>
+
+          <p>
+            Développement back-end d'un site de notation de livres en
+            technologie Express JS et MongoDB. Développement d'une API et
+            connexion à MongoDB, création d'un système d'authentification
+            sécurisé avec des mots de passe hashés et des jetons.
+          </p>
+          <a
+            href="http://github.com/R-GRAN/OpenClassrooms_projet_7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consulter le code
+          </a>
+        </div>
+      </article>
     </section>
-  );
+  ); */
 }
 
 export default Portfolio;

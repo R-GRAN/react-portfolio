@@ -23,10 +23,10 @@
 
 .fadeIn {
   opacity: 0; // Opacité initiale à 0
-  animation: fadeInAnimation 1.5s forwards; // Utilisation de l'animation fadeInAnimation pendant 2 secondes
+  animation: fadeInAnimation 3.25s forwards; // Utilisation de l'animation fadeInAnimation pendant 3 secondes
 }
 .delayed {
-  animation-delay: 1.25s; // Délai de 2 secondes avant le début de l'animation
+  animation-delay: 1.25s; // Délai de 1.25 seconde avant le début de l'animation
 }
 
 @keyframes fadeInAnimation {
