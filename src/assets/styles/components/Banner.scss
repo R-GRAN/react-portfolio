@@ -57,6 +57,9 @@
   }
 }
 @media screen and (max-width: 450px) {
+  .banner {
+    object-fit: unset;
+  }
   .banner-title {
     font-size: 3rem;
   }
