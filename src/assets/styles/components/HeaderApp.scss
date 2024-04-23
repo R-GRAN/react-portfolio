@@ -9,17 +9,21 @@
   width: 100%;
   background-color: rgba(255, 255, 255, 0.78);
   z-index: 99;
-  padding: 15px 10px;
+  padding: 15px;
   backdrop-filter: blur(20px);
 }
 
+.header-logo {
+  width: 40px;
+}
+
 .header-nav {
-  width: 50%;
+  width: 60%;
 }
 
 .header-menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .header-btn-sm-menu {
@@ -28,7 +32,10 @@
 
 @media screen and (min-width: 451px) and (max-width: 780px) {
   .header-nav {
-    width: 70%;
+    width: 80%;
+  }
+  .header-logo {
+    width: 30px;
   }
 }
 
@@ -36,12 +43,16 @@
   .header-style {
     height: 50px;
   }
+  .header-logo {
+    width: 25px;
+  }
 
   .header-btn-sm-menu {
     display: block;
     border: none;
     background-color: transparent;
     position: absolute;
+    margin-right: 5px;
     top: 40%;
     right: 5%;
     z-index: 999;

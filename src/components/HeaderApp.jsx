@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import laptop from "@/assets/images/laptop.svg"
 
 function HeaderApp() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,9 @@ function HeaderApp() {
 
   return (
     <header className="header-style">
-      <a href="#home">Rémy Grangenois</a>
+      <a href="#home">
+        <img src={laptop} className="header-logo" alt="Logo du portfolio" />
+      </a>
       <button
         className="header-btn-sm-menu"
         aria-label="menu"

@@ -23,6 +23,7 @@ textarea {
   border: solid 1px black;
   height: 50px;
   background-color: #efefef;
+  font-size: 21px;
 }
 
 .contact-info {
@@ -46,6 +47,10 @@ textarea {
     margin: 10px 0;
     padding: 10px;
   }
+
+  .contact-btn {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -57,5 +62,9 @@ textarea {
   textarea {
     margin: 8px 0;
     padding: 8px;
+  }
+
+  .contact-btn {
+    font-size: 16px;
   }
 }
