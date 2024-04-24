@@ -4,8 +4,7 @@ function Contact() {
       <h3>Contact</h3>
       <h4 className="contact-text">
         Besoin de me contacter ? Vous pouvez me joindre en remplissant ce
-        formulaire ci-dessous ou par email en cliquant sur le lien juste en
-        dessous.
+        formulaire ci-dessous ou par email en cliquant sur le lien un peu plus bas.
       </h4>
 
       <div className="form-container">
