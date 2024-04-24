@@ -34,6 +34,11 @@
   .header-nav {
     width: 80%;
   }
+
+  .header-menu {
+    display: flex;
+    justify-content: space-between;
+  }
   .header-logo {
     width: 30px;
   }
@@ -43,6 +48,7 @@
   .header-style {
     height: 50px;
   }
+
   .header-logo {
     width: 25px;
   }
