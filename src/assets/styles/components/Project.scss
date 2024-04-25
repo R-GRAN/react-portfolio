@@ -1,7 +1,8 @@
 .project {
   display: flex;
   padding: 40px;
-  height: 400px;
+  align-items: center;
+  text-align: left;
   gap: 40px;
   background-color: rgb(237, 235, 235);
 }
@@ -12,8 +13,7 @@
 }
 
 .project-img-container {
-  height: 80%;
-  align-self: center;
+  width: 100%;
 }
 
 .project-img {
@@ -25,26 +25,29 @@
 }
 
 .project-block {
-  flex: 1;
-  align-content: center;
-  text-align: left;
+  width: 100%;
 }
 
-.project-block p {
-  margin-block: 15px;
+.project-block{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 @media screen and (min-width: 451px) and (max-width: 780px) {
   .project {
-    height: auto;
-    padding: 20px;
-    gap: 20px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 25px;
+    padding: 15px;
   }
 
-  .project-img {
-    height: 150px;
+  .project-img-container {
+    width: 75%;
   }
+
+
 }
 
 @media screen and (max-width: 450px) {
@@ -54,6 +57,5 @@
     margin: 10px;
     gap: 15px;
     padding: 15px;
-    height: auto;
   }
 }
