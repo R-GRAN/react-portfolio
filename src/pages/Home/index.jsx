@@ -6,6 +6,7 @@ import Portfolio from "@/components/Portfolio";
 import Presentation from "@/components/Presentation";
 import Skills from "@/components/Skills";
 
+
 function Home() {
   return (
     <>
@@ -13,7 +14,7 @@ function Home() {
       <Banner />
       <Presentation />
       <Skills />
-      <Portfolio />
+       <Portfolio />    
       <Contact />
       <FooterApp />
     </>
