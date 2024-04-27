@@ -14,6 +14,7 @@
 .skills-article {
   position: relative;
   width: 20%;
+  overflow: hidden;
   aspect-ratio: 1/1;
 }
 
@@ -42,9 +43,8 @@
   border-radius: 10px;
   color: black;
   opacity: 0;
-  transition: 0.4s;
   cursor: default;
-  li{
+  li {
     font-size: 21px;
   }
 }
@@ -54,11 +54,15 @@
 }
 
 .skills-article:hover .skill-details {
-  opacity: 1;
+  animation: fadeInAnimation 1s forwards;
 }
 
-@media screen and (min-width: 451px) and (max-width: 780px) {
+.skills-article:hover .skill-title {
+   animation: whirlpoolAnimation 1s forwards;
+}
 
+/* Responsive Tablette */
+@media screen and (min-width: 451px) and (max-width: 780px) {
   .skills-lists {
     gap: 0;
     padding: 0;
@@ -68,9 +72,9 @@
     width: 140px;
   }
 
-  .skills-icon{
-    font-size:2.3rem;
-    margin:10px
+  .skills-icon {
+    font-size: 2.3rem;
+    margin: 10px;
   }
 
   .skill-details li {
@@ -79,6 +83,7 @@
   }
 }
 
+/* Responsive Mobile */
 @media screen and (max-width: 450px) {
   .skills-lists {
     display: flex;
@@ -88,7 +93,7 @@
     padding: 0;
   }
 
-  .skills-article{
+  .skills-article {
     width: 50%;
   }
 
@@ -101,9 +106,7 @@
     font-size: 16px;
   }
 
-
-
   .skills-article:active .skill-details {
-    opacity: 1;
+    animation: fadeInAnimation 0.5ms forwards;
   }
 }
