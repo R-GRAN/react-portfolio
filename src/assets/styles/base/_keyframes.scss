@@ -1,50 +1,93 @@
 /* Banner, skills-details et Project-image */
 
 @keyframes fadeInAnimation {
-    from {
-      opacity: 0; 
-    }
-    to {
-      opacity: 1; 
-    }
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+/* skills-details   */
+
+@keyframes fade0utAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes whirlpoolAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}
+@keyframes whirlpoolPopUpAnimation {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+    opacity: 1;
+  }
+}
+@keyframes zoomInExtraAnimation {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(10);
+  }
+}
+@keyframes zoomThenCollapseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes zoomThenAppearAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
 /* Project-image */
-  @keyframes zoomInAnimation {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.03);
-    }
+@keyframes zoomInAnimation {
+  from {
+    transform: scale(1);
   }
-  @keyframes zoomInExtraAnimation {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(10);
-    }
+  to {
+    transform: scale(1.03);
   }
-  @keyframes whirlpoolAnimation {
-    0% {
-      transform: scale(1)rotate(0deg);
-    }
-    100%{
-        transform: scale(0)rotate(360deg); 
-    }
-
-
-  }
+}
 
 /* project-title */
-  @keyframes fadeInBlackBackground {
-    from {
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0);
-    }
-    to {
-      opacity: 1;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+@keyframes fadeInBlackBackground {
+  from {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
   }
+  to {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
