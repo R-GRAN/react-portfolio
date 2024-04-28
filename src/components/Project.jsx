@@ -31,10 +31,6 @@ function Project({ project, index }) {
 <Scroller props={project.technos} index={index}/>
 </div>
 
-
-{/*         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-          Consulter le code
-        </a> */}
       </div>
     </article>
   );
