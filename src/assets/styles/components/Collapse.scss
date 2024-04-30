@@ -1,0 +1,27 @@
+.collapse{
+  background: linear-gradient(to right, rgb(237, 235, 235),white, rgb(237, 235, 235));
+}
+
+.title_collapse{
+    display: flex;
+    justify-content: space-between;
+h3{
+    font-size: 17px;
+    padding-block: 10px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    animation: cancelRotation 200ms linear;
+    &.rotate {
+      animation: rotation 200ms linear forwards;
+    }
+
+    i {
+      transform: scale(1.5);
+    }
+  }
+}

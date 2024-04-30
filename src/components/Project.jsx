@@ -1,4 +1,5 @@
-import Scroller from "./Scroller";
+/* import Scroller from "./Scroller"; */
+import Collapse from "./Collapse";
 
 function Project({ project, index }) {
   return (
@@ -27,8 +28,9 @@ function Project({ project, index }) {
         <p>{project.description}</p>
 <div>
 
-<Scroller props={project.techniques} index={index}/>
-<Scroller props={project.technos} index={index}/>
+<Collapse techniques={project.techniques} technos={project.technos} index={index}/>
+{/* <Scroller props={project.techniques} index={index}/>
+<Scroller props={project.technos} index={index}/> */}
 </div>
 
       </div>
