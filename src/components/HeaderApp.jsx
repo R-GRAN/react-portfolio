@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import laptop from "@/assets/images/laptop.svg"
+import laptop from "@/assets/images/laptop.svg";
 
 function HeaderApp() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,16 +37,24 @@ function HeaderApp() {
       <nav className="header-nav">
         <ul ref={menuRef} className="header-menu">
           <li>
-            <a href="#presentation" onClick={toggleMenu}>Présentation</a>
+            <a href={"#presentation"} onClick={toggleMenu}>
+              Présentation
+            </a>
           </li>
           <li>
-            <a href="#skills" onClick={toggleMenu}>Compétences</a>
+            <a href="#skills" onClick={toggleMenu}>
+              Compétences
+            </a>
           </li>
           <li>
-            <a href="#portfolio" onClick={toggleMenu}>Portfolio</a>
+            <a href="#portfolio" onClick={toggleMenu}>
+              Portfolio
+            </a>
           </li>
           <li>
-            <a href="#contact" onClick={toggleMenu}>Contact</a>
+            <a href="#contact" onClick={toggleMenu}>
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
