@@ -3,7 +3,7 @@ function Skills() {
     <section className="skills" id="skills">
       <h3>Mes compétences</h3>
       <div className="skills-lists">
-        <article className="skills-article">
+        <article className="skills-article skills-article-1">
           <div className="skill-title">
             <i className="skills-icon fa-solid fa-display"></i>
             <h4>Front-end</h4>
@@ -17,7 +17,7 @@ function Skills() {
             </ul>
           </div>
         </article>
-        <article className="skills-article">
+        <article className="skills-article skills-article-2">
           <div className="skill-title">
             <i className="skills-icon fa-solid fa-server"></i>
             <h4>Back-end</h4>
@@ -31,7 +31,7 @@ function Skills() {
             </ul>
           </div>
         </article>
-        <article className="skills-article">
+        <article className="skills-article skills-article-3" >
           <div className="skill-title">
             <i className="skills-icon fa-solid fa-screwdriver-wrench"></i>
             <h4>Outils</h4>

@@ -1,98 +1,124 @@
 .skills {
-    color: white;
-    background: linear-gradient(to right, #220636, #3c075f, #250371, #54015a);
-  }
-  
-  .skills-lists {
-    display: flex;
-    margin-top: 10px;
-    justify-content: space-evenly;
-  }
-  
-  .skills-article {
-    height: 250px;
-    width: 250px;
-  }
-  
-  .skill-title {
-    position: absolute;
-    height: 250px;
-    width: 250px;
-    justify-content: center;
-    align-content: center;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-  }
-  
-  .skills-icon {
-    font-size: 3rem;
-    margin: 15px;
-  }
-  
-  .skill-details {
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    color: black;
-    opacity: 0;
-    transition: 0.4s;
-    cursor: default;
-  }
-  
-  .skill-details li {
-    margin-block: 10px;
-  }
-  
-  .skills-article:hover .skill-details {
-    opacity: 1;
-  }
-
-@media screen and (min-width: 451px) and (max-width: 780px) {
-    .skills-article {
-        height: 125px;
-        width: 125px;
-      }
-    
-      .skill-title {
-        height: 125px;
-        width: 125px;
-      }
-    
-      .skill-details li {
-        margin-block: 5px;
-        font-size: 14px;
-      }
+  color: white;
+  padding-block: 30px;
+  margin: 30px 0;
+  background: linear-gradient(to right, #220636, #3c075f, #250371, #54015a);
 }
 
+.skills-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.skills-article {
+  position: relative;
+  width: 20%;
+  aspect-ratio: 1/1;
+}
+
+.skill-title {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.skills-icon {
+  font-size: 3rem;
+  margin: 15px;
+}
+
+.skill-details {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  opacity: 0;
+  cursor: default;
+  li {
+    font-size: 21px;
+  }
+}
+
+.skill-details li {
+  margin-block: 10px;
+}
+
+.skills-article-1:hover .skill-title {
+ animation: whirlpoolAnimation 0.8s forwards;
+} 
+.skills-article-1:hover .skill-details {
+ animation: whirlpoolPopUpAnimation 0.8s forwards 0.6s;
+} 
+.skills-article-2:hover .skills-article {
+ overflow: hidden;
+} 
+.skills-article-2:hover .skill-details {
+animation: fadeInAnimation 1s forwards;
+}
+
+.skills-article-2:hover .skill-title {
+ animation: whirlpoolAnimation 1.4s forwards;
+}
+.skills-article-3:hover .skill-details {
+animation: zoomThenAppearAnimation 1s forwards 0.4s;
+}
+
+ .skills-article-3:hover .skill-title {
+ animation:  zoomThenCollapseAnimation 0.4s forwards;
+} 
+
+/* Responsive Tablette */
+@media screen and (min-width: 451px) and (max-width: 780px) {
+  .skills-lists {
+    gap: 0;
+    padding: 0;
+  }
+  .skills-article {
+    height: 140px;
+    width: 140px;
+  }
+
+  .skills-icon {
+    font-size: 2.3rem;
+    margin: 10px;
+  }
+
+  .skill-details li {
+    margin-block: 5px;
+    font-size: 18px;
+  }
+}
+
+/* Responsive Mobile */
 @media screen and (max-width: 450px) {
-    .skills-lists {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-    
-      .skills-article {
-        height: 150px;
-        width: 150px;
-      }
-    
-      .skill-title {
-        height: 150px;
-        width: 150px;
-      }
-    
-      .skills-icon {
-        font-size: 2rem;
-      }
-    
-      .skills-article:active .skill-details {
-        opacity: 1;
-      }
+  .skills-lists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .skills-article {
+    width: 50%;
+    overflow: hidden;
+  }
+
+  .skills-icon {
+    font-size: 3rem;
+  }
+
+  .skill-details li {
+    margin-block: 2.5px;
+    font-size: 16px;
+  }
 }

@@ -1,10 +1,10 @@
-import mac_open from "@/assets/images/mac_open.webp"
+import banner from "@/assets/images/banner.avif";
 
 function Banner() {
   return (
     <div className="banner" id="home">
       <img
-        src={mac_open}
+      src={banner}
         alt="bannière"
         className="banner-background"
       />

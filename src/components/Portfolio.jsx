@@ -7,7 +7,9 @@ function Portfolio() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const res = await fetch("http://localhost:4000/api/projects");
+        const res = await fetch(
+          "https://portfolio-backend-seven-henna.vercel.app/api/projects"
+        );
         if (!res.ok) {
           throw new Error("Erreur lors de la récupération des données");
         }
