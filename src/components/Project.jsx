@@ -26,7 +26,7 @@ function Project({ project, index}) {
       </div>
       <div className="project-block">
         <h4>{project.title}</h4>
-        <p>{project.category}</p>
+        <h5>{project.category}</h5>
 
         <p>{project.description}</p>
         <div>

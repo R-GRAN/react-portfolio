@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import Project from "./Project";
 import AddProject from "./AddProject";
+import FormToken from "./FormToken";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
+  const [token,setToken] = useState(sessionStorage.getItem("Superbe Token"));
 
   function handleAddProject(project) {
     setProjects([...projects, project]);
@@ -33,8 +35,9 @@ function Portfolio() {
       {projects.map((project, index) => (
         <Project key={project.title} project={project} index={index} />
       ))}
-
-      <AddProject handleAddProject={handleAddProject} />
+      {token &&  <AddProject handleAddProject={handleAddProject} setToken={setToken} token={token}/>}
+      {!token && <FormToken setToken ={setToken} token={token} />}
+     
     </section>
   );
 }
