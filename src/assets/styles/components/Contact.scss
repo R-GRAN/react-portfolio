@@ -4,18 +4,16 @@
 
 .form-container {
   margin-block: 30px;
-}
-
-input,
-textarea {
-  width: 70vw;
-  max-width: 600px;
-  margin: 12px 0;
-  padding: 12px;
-}
-
-textarea {
-  height: 35vh;
+  input,
+  textarea {
+    width: 70vw;
+    max-width: 600px;
+    margin: 12px 0;
+    padding: 12px;
+  }
+  textarea {
+    height: 35vh;
+  }
 }
 
 .contact-btn {

@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import Project from "./Project";
+import AddProject from "./AddProject";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
+
+  function handleAddProject(project) {
+    setProjects([...projects, project]);
+  }
 
   useEffect(() => {
     async function fetchProjects() {
@@ -28,6 +33,8 @@ function Portfolio() {
       {projects.map((project, index) => (
         <Project key={project.title} project={project} index={index} />
       ))}
+
+      <AddProject handleAddProject={handleAddProject} />
     </section>
   );
 }

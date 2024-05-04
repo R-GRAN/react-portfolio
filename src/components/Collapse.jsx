@@ -14,6 +14,10 @@ function Collapse( {techniques, technos ,index}) {
     }
   }
 
+if (techniques.length === 0 && technos.length ===0) {
+  return
+}
+
   return (
     <div className="collapse">
       <div className="title_collapse">
