@@ -1,0 +1,19 @@
+.btn-class {
+    width: 50%;
+    font-size: 21px;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    text-wrap: wrap;
+    //background: linear-gradient(to right, #431365, #44086a, #2d0983, #6e0176);
+  }
+
+  .red {
+    background-color: rgb(225, 41, 41);
+  }
+
+  .red:hover {
+    transition: 1s;
+    background-color: rgb(223, 32, 32);
+  }

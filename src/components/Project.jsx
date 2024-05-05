@@ -1,10 +1,7 @@
-/* import Scroller from "./Scroller"; */
 import Collapse from "./Collapse";
+import HandleProjectMenu from "./HandleProjectMenu";
 
-let token = sessionStorage.getItem("Superbe Token");
-
-function Project({ project, index}) {
-
+function Project({ project, index, token,handleDeleteProject }) {
   return (
     <article className={index % 2 === 0 ? "project" : "project light-reverse"}>
       <div className="project-img-container">
@@ -36,6 +33,13 @@ function Project({ project, index}) {
             index={index}
           />
         </div>
+        {token && (
+          <HandleProjectMenu
+            _id={project._id}
+            handleDeleteProject={handleDeleteProject}
+            token={token}
+          />
+        )}
       </div>
     </article>
   );

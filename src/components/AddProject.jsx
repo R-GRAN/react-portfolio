@@ -1,10 +1,11 @@
 import { useState, useRef } from "react";
 
 function AddProject(props) {
-  const { handleAddProject ,setToken,token} = props;
+  const { handleAddProject, setToken, token } = props;
   const formRef = useRef(null);
 
   const [project, setProject] = useState({
+    _id: Date.now(),
     title: "Un tout nouveau projet",
     category: "Front end",
     description:
@@ -20,12 +21,11 @@ function AddProject(props) {
   });
 
   function handleClick() {
-   
-    if (token ?? false) {
+    if (token) {
       sessionStorage.removeItem("Superbe Token");
-      setToken(null)
+      setToken(null);
       alert(
-        "Tu as supprimé le Superbe Token 🪙, essaie d'ajouter un projet sans.. essaie.."
+        "Tu as supprimé le Superbe Token 🪙, mais tu en as besoin pour gérer les projets ! Tu dois t'identifier à nouveau pour en récuperer un autre ! J'aurais peut être du te prévenir avant que tu ne l'effaces.. désolé 😇 "
       );
     } else {
       alert(
@@ -51,17 +51,17 @@ function AddProject(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
- 
 
-    if (token === undefined || token === null) {
+    if (!token) {
       alert(
-        "Tu n'as plus le Superbe Token 🪙, tu dois t'identifier à nouveau pour en récuperer un autre ! J'aurais peut être du te prévenir avant que tu ne l'effaces.. désolé 😇"
+        "Tu as perdu ton Superbe Token 🪙 ?! Comment t'as fait ça ?! Tu vas devoir t'identifier à nouveau !"
       );
       return;
     } else {
       formRef.current.reset();
       handleAddProject(project);
       setProject({
+        _id: Date.now(),
         title: "",
         category: "",
         description: "",
@@ -74,6 +74,10 @@ function AddProject(props) {
         "Tu viens de poster un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
       );
     }
+  }
+
+  if (!token) {
+    return;
   }
 
   return (

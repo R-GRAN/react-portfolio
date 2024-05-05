@@ -5,10 +5,33 @@ import FormToken from "./FormToken";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
-  const [token,setToken] = useState(sessionStorage.getItem("Superbe Token"));
+  const [token, setToken] = useState(sessionStorage.getItem("Superbe Token"));
 
   function handleAddProject(project) {
     setProjects([...projects, project]);
+  }
+
+  function handleDeleteProject(id) {
+    // Vérifier si l'ID du projet est fourni
+    if (id) {
+      // Créer une copie des projets
+      const updatedProjects = [...projects];
+
+      // Trouver l'index grace à l'ID
+
+      const index = updatedProjects.findIndex((key) => key._id === id); // Recherche l'objet ayant l'ID 2
+
+      //Retirer le projet
+      updatedProjects.splice(index, 1);
+
+      //Modifier l'état de projects
+      setProjects(updatedProjects);
+      alert(
+        "Tu viens de supprimer un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
+      );
+    } else {
+      alert("L'ID du projet à supprimer n'a pas été fourni.");
+    }
   }
 
   useEffect(() => {
@@ -29,15 +52,34 @@ function Portfolio() {
     fetchProjects();
   }, []);
 
+  if (projects.length === 0) {
+    return (
+      <section className="portfolio" id="portfolio">
+        <p>Va bosser...</p>
+      </section>
+    );
+  }
+
   return (
     <section className="portfolio" id="portfolio">
       <h3>Portfolio</h3>
       {projects.map((project, index) => (
-        <Project key={project.title} project={project} index={index} />
+        <Project
+          key={project._id}
+          project={project}
+          index={index}
+          token={token}
+          handleDeleteProject={handleDeleteProject}
+        />
       ))}
-      {token &&  <AddProject handleAddProject={handleAddProject} setToken={setToken} token={token}/>}
-      {!token && <FormToken setToken ={setToken} token={token} />}
-     
+      {token && (
+        <AddProject
+          handleAddProject={handleAddProject}
+          setToken={setToken}
+          token={token}
+        />
+      )}
+      {!token && <FormToken setToken={setToken} />}
     </section>
   );
 }
