@@ -1,8 +1,4 @@
-function HandleProjectMenu({
-  token,
-  handleDeleteProject,_id
-}) {
-      
+function HandleProjectMenu({ token, handleDeleteProject, _id }) {
   function handleDelete() {
     // Vérifier si le token est présent
     if (!token) {
@@ -10,12 +6,12 @@ function HandleProjectMenu({
         "Vous n'avez pas le Superbe Token, veuillez vous identifier à nouveau"
       );
     } else {
-        handleDeleteProject(_id)
+      handleDeleteProject(_id);
     }
   }
 
   return (
-    <div>
+    <div className="HandleProjectMenu">
       <input
         type="button"
         value="Supprimer le projet"

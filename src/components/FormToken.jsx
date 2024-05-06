@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
-function FormToken({setToken,token}) {
-
+function FormToken({ setToken, token }) {
   const [identifiant, setIdentifiant] = useState("azerty");
   const [password, setPassword] = useState("password1234");
+  const formRef = useRef(null);
+  const btnRef = useRef(null);
 
+  function popUp() {
+    const form = formRef.current;
+    const btn = btnRef.current;
+
+    btn.classList.add("display-none");
+    form.classList.add("display-block");
+  }
   function handleSubmit(evt) {
     evt.preventDefault();
     if (identifiant === "azerty" && password === "password1234") {
@@ -13,7 +21,7 @@ function FormToken({setToken,token}) {
           "Tu viens d'être gratifié d'un Superbe Token 🪙 dans ton session storage ! Si si, va vérifier 😉"
         );
         sessionStorage.setItem("Superbe Token", "🪙");
-        setToken(true)
+        setToken(true);
       } else {
         alert("Ne sois pas gourmand, un Superbe Token 🪙 à la fois ");
       }
@@ -26,13 +34,22 @@ function FormToken({setToken,token}) {
 
   return (
     <div className="formToken">
-      <h3>Ajouter un projet</h3>
+      <input
+        type="button"
+        value="Gerer les projets !"
+        className="btn-class green"
+        onClick={popUp}
+        ref={btnRef}
+      />
+
       <form
+        ref={formRef}
         action=""
         method="get"
         className="addProject-login-form"
         onSubmit={(evt) => handleSubmit(evt)}
       >
+        <h3>Gerer les projets</h3>
         <label htmlFor="identifiant">Identifiant : </label>
         <input
           type="text"
