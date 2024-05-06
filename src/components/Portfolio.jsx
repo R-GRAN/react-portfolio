@@ -56,6 +56,14 @@ function Portfolio() {
     return (
       <section className="portfolio" id="portfolio">
         <p>Va bosser...</p>
+        {token && (
+          <AddProject
+            handleAddProject={handleAddProject}
+            setToken={setToken}
+            token={token}
+          />
+        )}
+        {!token && <FormToken setToken={setToken} />}
       </section>
     );
   }
