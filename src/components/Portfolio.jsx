@@ -22,7 +22,7 @@ function Portfolio() {
       const index = updatedProjects.findIndex((key) => key._id === id); // Recherche l'objet ayant l'ID
       const projectTitle = updatedProjects[index].title;
       const check = prompt(
-        `Tu es sur le point de supprimer le projet ${projectTitle}. Pour continuer, tape : Delete`
+        `Tu es sur le point de supprimer le projet "${projectTitle}". Pour continuer, tape : Delete .`
       );
 
       if (check === "Delete") {
@@ -32,11 +32,11 @@ function Portfolio() {
         //Modifier l'état de projects
         setProjects(updatedProjects);
         alert(
-          "Tu viens de supprimer un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
+          `Félicitations 🎊🥳🎉 ! Tu viens de supprimer le projet "${projectTitle}"..pratiquement.. comme je le fais ! ( sauf que moi c'est pour de bon 😉 )`
         );
       } else if (check !== "Delete") {
         alert(
-          "Tu sembles hésiter.. ou tu as raté quelque chose.. Rééssaye si tu veux vraiment le supprimer"
+          `Tu sembles hésiter.. ou tu as raté quelque chose.. Rééssaye si tu veux vraiment supprimer ce projet.`
         );
         return;
       }

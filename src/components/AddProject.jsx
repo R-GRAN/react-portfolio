@@ -71,7 +71,7 @@ function AddProject(props) {
         technos: [],
       });
       alert(
-        "Tu viens de poster un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
+        "Félicitations 🎊🥳🎉 ! Tu viens de poster un projet ..pratiquement.. comme je le fais ! ( sauf que moi c'est pour de bon 😉 )"
       );
     }
   }
@@ -81,7 +81,7 @@ function AddProject(props) {
   }
 
   return (
-    <>
+    <div className="addProject">
       <h4>Remplir le formulaire </h4>
       <form
         ref={formRef}
@@ -183,7 +183,7 @@ function AddProject(props) {
         value="Supprimer le Superbe Token 🪙"
         onClick={handleClick}
       />
-    </>
+    </div>
   );
 }
 export default AddProject;
