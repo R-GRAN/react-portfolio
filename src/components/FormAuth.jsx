@@ -35,7 +35,7 @@ function FormAuth() {
                 "token",
                 JSON.stringify(data)
               )(
-                alert("token déposé")(
+                alert("Authentification réussie, bienvenue !")(
                   //redirige la page vers index.html
                   navigate("/")
                 )
