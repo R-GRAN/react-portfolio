@@ -19,18 +19,30 @@ function Portfolio() {
 
       // Trouver l'index grace à l'ID
 
-      const index = updatedProjects.findIndex((key) => key._id === id); // Recherche l'objet ayant l'ID 2
-
-      //Retirer le projet
-      updatedProjects.splice(index, 1);
-
-      //Modifier l'état de projects
-      setProjects(updatedProjects);
-      alert(
-        "Tu viens de supprimer un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
+      const index = updatedProjects.findIndex((key) => key._id === id); // Recherche l'objet ayant l'ID
+      const projectTitle = updatedProjects[index].title;
+      const check = prompt(
+        `Tu es sur le point de supprimer le projet ${projectTitle}. Pour continuer, tape : Delete`
       );
+
+      if (check === "Delete") {
+        //Retirer le projet
+        updatedProjects.splice(index, 1);
+
+        //Modifier l'état de projects
+        setProjects(updatedProjects);
+        alert(
+          "Tu viens de supprimer un projet ..pratiquement.. comme je le fais ! Félicitations 🎊🥳🎉!"
+        );
+      } else if (check !== "Delete") {
+        alert(
+          "Tu sembles hésiter.. ou tu as raté quelque chose.. Rééssaye si tu veux vraiment le supprimer"
+        );
+        return;
+      }
     } else {
       alert("L'ID du projet à supprimer n'a pas été fourni.");
+      return;
     }
   }
 
