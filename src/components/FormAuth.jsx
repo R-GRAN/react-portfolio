@@ -24,22 +24,20 @@ function FormAuth() {
         body: chargeUtile,
       }).then((res) => {
         if (!res.ok) {
-          console.log("mot de passe et/ou mail incorrects");
+          alert("Mot de passe et/ou mail incorrect(s)");
         } else {
           // recupere la réponse et la formate
           res
             .json()
             //enregistre le token dans le sessionStorage
             .then((data) => {
-              sessionStorage.setItem(
-                "token",
-                JSON.stringify(data)
-              )(
-                alert("Authentification réussie, bienvenue !")(
-                  //redirige la page vers index.html
-                  navigate("/")
-                )
-              );
+              if (sessionStorage.getItem("Superbe Token")) {
+                sessionStorage.removeItem("Superbe Token");
+              }
+              sessionStorage.setItem("token", JSON.stringify(data));
+              alert("Authentification réussie, bienvenue !");
+              //redirige la page vers index.html
+              navigate("/");
             });
         }
       });
@@ -66,7 +64,6 @@ function FormAuth() {
           value={email}
           onChange={(evt) => {
             setEmail(evt.target.value);
-            console.log(email);
           }}
         />
         <label htmlFor="password">Password : </label>
@@ -78,6 +75,19 @@ function FormAuth() {
           onChange={(evt) => setPassword(evt.target.value)}
         />
         <input type="submit" value="connexion" />
+        {sessionStorage.getItem("token") && (
+          <Link
+            to={"/"}
+            onClick={(evt) => {
+              evt.preventDefault();
+              sessionStorage.removeItem("token");
+              alert("Déconnexion réussie, à bientôt !");
+              navigate("/");
+            }}
+          >
+            Déconnexion
+          </Link>
+        )}
         <Link to={"/"}>Retourner à la page d'accueil</Link>
       </form>
     </>

@@ -1,7 +1,7 @@
 import Collapse from "./Collapse";
 import HandleProjectMenu from "./HandleProjectMenu";
 
-function Project({ project, index, token,handleDeleteProject }) {
+function Project({ project, index, token, privateToken, handleDeleteProject }) {
   return (
     <article className={index % 2 === 0 ? "project" : "project light-reverse"}>
       <div className="project-img-container">
@@ -14,7 +14,7 @@ function Project({ project, index, token,handleDeleteProject }) {
           <img
             className="project-img"
             src={project.imageUrl}
-            alt={"visuel du projet " + project.title}
+            alt={`visuel du projet "${project.title}"`}
           />
           <div className="project-title">
             <span>Consulter le code sur GitHub</span>
@@ -33,9 +33,10 @@ function Project({ project, index, token,handleDeleteProject }) {
             index={index}
           />
         </div>
-        {token && (
+        {(token || privateToken) && (
           <HandleProjectMenu
             _id={project._id}
+            privateToken={privateToken}
             handleDeleteProject={handleDeleteProject}
             token={token}
           />

@@ -21,7 +21,7 @@ function FormToken({ setToken, token }) {
           "Tu viens d'être gratifié d'un Superbe Token 🪙 dans ton session storage ! Si si, va vérifier 😉"
         );
         sessionStorage.setItem("Superbe Token", "🪙");
-        setToken(true);
+        setToken(sessionStorage.getItem("Superbe Token"));
       } else {
         alert("Ne sois pas gourmand, un Superbe Token 🪙 à la fois ");
       }

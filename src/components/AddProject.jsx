@@ -1,10 +1,20 @@
 import { useState, useRef } from "react";
 
 function AddProject(props) {
-  const { handleAddProject, setToken, token } = props;
+  const { handleAddProject, setToken, token, privateToken } = props;
   const formRef = useRef(null);
+  const [file, setFile] = useState(null);
 
+  function getUserId() {
+    if (privateToken != null) {
+      const parsedPrivateToken = JSON.parse(privateToken);
+      return parsedPrivateToken.userId;
+    } else if (token != null) {
+      return token;
+    }
+  }
   const [project, setProject] = useState({
+    userId: getUserId(),
     _id: Date.now(),
     title: "Un tout nouveau projet",
     category: "Front end",
@@ -19,6 +29,48 @@ function AddProject(props) {
     ],
     technos: ["React", "MongoDB", "Sass", "HTML", "CSS", "Figma"],
   });
+
+  async function addproject() {
+    const parsedToken = JSON.parse(sessionStorage.getItem("token"));
+
+    const bodyFormData = new FormData();
+    bodyFormData.append("project", JSON.stringify(project));
+    bodyFormData.append("image", file);
+
+    try {
+      const response = await fetch(
+        `${"https://portfolio-backend-seven-henna.vercel.app/api/projects"}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${parsedToken.token}`,
+          },
+          body: bodyFormData,
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      } else {
+        alert(`Projet "${project.title}" créé !`);
+        setProject({
+          userId: getUserId(),
+          _id: Date.now(),
+          title: "",
+          category: "",
+          description: "",
+          imageUrl: "",
+          githubUrl: "https://github.com/R-GRAN/",
+          techniques: [],
+          technos: [],
+        });
+
+        return await response.json();
+      }
+    } catch (err) {
+      console.error(err);
+      return { error: true, message: err.message };
+    }
+  }
 
   function handleClick() {
     if (token) {
@@ -40,8 +92,11 @@ function AddProject(props) {
   }
   function handleChangeImg(evt) {
     const { name, files } = evt.target;
-    const imageUrl = URL.createObjectURL(files[0]);
-    setProject({ ...project, [name]: imageUrl });
+    setFile(evt.target.files[0]);
+    if (token) {
+      const imageUrl = URL.createObjectURL(files[0]);
+      setProject({ ...project, [name]: imageUrl });
+    }
   }
   function handleChangeIntoArray(evt) {
     const { name, value } = evt.target;
@@ -49,18 +104,15 @@ function AddProject(props) {
     setProject({ ...project, [name]: array });
   }
 
-  function handleSubmit(evt) {
+  async function handleSubmit(evt) {
     evt.preventDefault();
 
-    if (!token) {
-      alert(
-        "Tu as perdu ton Superbe Token 🪙 ?! Comment t'as fait ça ?! Tu vas devoir t'identifier à nouveau !"
-      );
-      return;
-    } else {
-      formRef.current.reset();
+    formRef.current.reset();
+
+    if (token) {
       handleAddProject(project);
       setProject({
+        userId: getUserId(),
         _id: Date.now(),
         title: "",
         category: "",
@@ -73,11 +125,10 @@ function AddProject(props) {
       alert(
         "Félicitations 🎊🥳🎉 ! Tu viens de poster un projet ..pratiquement.. comme je le fais ! ( sauf que moi c'est pour de bon 😉 )"
       );
+    } else if (privateToken) {
+      //handleAddProject(project);
+      addproject();
     }
-  }
-
-  if (!token) {
-    return;
   }
 
   return (
@@ -177,12 +228,14 @@ function AddProject(props) {
           />
         </div>
       </form>
-      <input
-        type="button"
-        className="btn-class orange rebond"
-        value="Supprimer le Superbe Token 🪙"
-        onClick={handleClick}
-      />
+      {token && (
+        <input
+          type="button"
+          className="btn-class orange rebond"
+          value="Supprimer le Superbe Token 🪙"
+          onClick={handleClick}
+        />
+      )}
     </div>
   );
 }

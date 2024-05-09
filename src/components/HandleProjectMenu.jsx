@@ -1,10 +1,11 @@
-function HandleProjectMenu({ token, handleDeleteProject, _id }) {
+function HandleProjectMenu({ token, handleDeleteProject, privateToken, _id }) {
   function handleDelete() {
-    // Vérifier si le token est présent
-    if (!token) {
+    // Vérifier qu'aucuns tokens ne soit présents
+    if (!token && !privateToken) {
       alert(
         "Vous n'avez pas le Superbe Token, veuillez vous identifier à nouveau"
       );
+      return;
     } else {
       handleDeleteProject(_id);
     }

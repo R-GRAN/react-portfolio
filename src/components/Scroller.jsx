@@ -1,6 +1,5 @@
 function Scroller({ props, index }) {
-  //if (props.length === 1) return;
-  console.log(props);
+  if (props.length === 1) return;
   return (
     <div className={index % 2 === 0 ? "scroller" : "scroller"}>
       <div className="marquee">
