@@ -14,7 +14,8 @@
 
 .project-img-container {
   position: relative;
-  width: 100%;
+  width: 50%;
+  aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
@@ -40,6 +41,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+  aspect-ratio: 16/9;
   width: 100%;
   object-fit: cover;
 }
@@ -52,13 +54,10 @@
 }
 
 .project-block {
-  width: 100%;
-}
-
-.project-block {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 50%;
 }
 
 /* Responsive Tablette */
@@ -69,10 +68,12 @@
     gap: 25px;
     padding: 15px;
   }
+  .project-block {
+    width: 100%;
+  }
 
   .project-img-container {
-    width: 75%;
-    align-items: center;
+    width: 85%;
   }
 }
 
@@ -83,5 +84,11 @@
     margin: 10px;
     gap: 15px;
     padding: 15px;
+  }
+  .project-block {
+    width: 100%;
+  }
+  .project-img-container{
+    width: 100%;
   }
 }

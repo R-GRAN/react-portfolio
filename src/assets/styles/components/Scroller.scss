@@ -1,23 +1,17 @@
-.scroller {
-  width: 100%; 
-  background: linear-gradient(to right, rgb(237, 235, 235),white, rgb(237, 235, 235));
-  overflow: hidden;
-  animation: scroll linear infinite;
-}
-
 .scroller__inner {
   display: flex;
-  padding-block:5px;
+  justify-content: space-between;
+  padding-block: 15px;
   flex-wrap: nowrap;
   gap: 1rem;
-}
-
-.light-reverse {
-    background: linear-gradient(to right,white, rgb(237, 235, 235),white);
-  }
-
-.tag-list {
+  width: fit-content;
+  min-width: 100%;
+  animation: marquee 30s linear infinite;
   li {
-    padding: 5px;
+    text-wrap: nowrap;
   }
+}
+.scroller__inner:hover {
+  animation-play-state: paused;
+  cursor: default;
 }

@@ -14,7 +14,7 @@ function Home() {
       <Banner />
       <Presentation />
       <Skills />
-       <Portfolio />    
+       <Portfolio />  
       <Contact />
       <FooterApp />
     </>

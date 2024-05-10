@@ -1,0 +1,142 @@
+.addProject{
+  margin-block: 20px;
+}
+
+.addProject-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  input,
+  label {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+  }
+}
+.addProject-project-form {
+  display: flex;
+  input,
+  textarea,
+  select,
+  label {
+    width: 80%;
+    padding: 20px;
+  }
+  .addProject-project-form-block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+  }
+  .addProject-project-form-image {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    input {
+      width: 80%;
+    }
+  }
+}
+
+.inputFiles {
+  padding: 30px;
+  border: 1px #7e7e7e solid;
+  border-radius: 5px;
+}
+
+.btn-class {
+  width: 50%;
+  font-size: 21px;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  text-wrap: wrap;
+  //background: linear-gradient(to right, #431365, #44086a, #2d0983, #6e0176);
+}
+
+.btn-class:hover {
+  animation: zoomInAnimation 1s forwards;
+}
+
+.green:hover {
+  transition: 1s;
+  background-color: rgb(28, 136, 18);
+}
+.orange:hover {
+  transition: 1s;
+  background-color: rgb(179, 105, 36);
+}
+
+.orange {
+  animation: lookAtMe 2s linear infinite;
+  background-color: rgb(152, 105, 17);
+  padding: 25px;
+  width: auto;
+}
+.green {
+  background-color: rgb(19, 87, 19);
+}
+
+/* Responsive Tablette */
+@media screen and (min-width: 451px) and (max-width: 780px) {
+    .btn-class  {
+    font-size: 18px;
+  }
+
+  .addProject-project-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .addProject-project-form .addProject-project-form-block {
+    width: 100%;
+  }
+  .addProject-project-form-block {
+    width: 100%;
+  }
+
+  .addProject-project-form .addProject-project-form-image {
+    width: 100%;
+  } 
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 450px) {
+  .btn-class  {
+    font-size: 16px;
+  }
+  .addProject-project-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .addProject-project-form .addProject-project-form-block {
+    width: 100%;
+  }
+  .addProject-project-form-block {
+    width: 100%;
+  }
+
+  .addProject-project-form .addProject-project-form-image {
+    width: 100%;
+  } 
+
+  .addProject-project-form {
+    input,
+    textarea,
+    select,
+    label {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  .addProject-project-form-image {
+    width: 100%;
+    input {
+      width: 100%;
+    }
+  }
+}

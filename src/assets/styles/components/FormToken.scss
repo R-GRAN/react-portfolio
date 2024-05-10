@@ -1,0 +1,31 @@
+.formToken {
+  margin: 20px;
+  overflow: hidden;
+}
+.btn-class {
+    width: 50%;
+    font-size: 21px;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    cursor: pointer;
+    text-wrap: wrap;
+  }
+
+  .green {
+    background-color: rgb(19, 87, 19);
+  }
+
+.addProject-login-form {
+  display: none;
+}
+
+.display-block {
+  display: flex;
+  animation: zoomThenAppearAnimation 1.5s forwards;
+}
+
+.display-none {
+  display: none;
+}
